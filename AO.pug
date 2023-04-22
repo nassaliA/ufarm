@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    title Agriculture Officer Portal
+  body
+    h1 Agriculture Officer Portal
+    h2 Register FarmerOne
+    form
+      label(for="name") Name:
+      input(type="text", id="name", name="name")
+      br
+      br
+
+      label(for="ward") Ward Represented:
+      input(type="text", id="ward", name="ward")
+      br
+      br
+
+      label(for="unique-fo-number") Unique FO Number:
+      input(type="text", id="unique-fo-number", name="unique-fo-number")
+      br
+      br
+
+      label(for="date-of-reg") Date of Registration:
+      input(type="date", id="date-of-reg", name="date-of-reg")
+      br
+      br
+
+      label(for="gender") Gender:
+      select(id="gender", name="gender")
+        option(value="male") Male
+        option(value="female") Female
+        option(value="other") Other
+      br
+      br
+
+      label(for="dob") Date of Birth:
+      input(type="date", id="dob", name="dob")
+      br
+      br
+
+      label(for="activities") Activities Involved:
+      br
+      input(type="checkbox", id="crop-farming", name="activities", value="crop-farming")
+      label(for="crop-farming") Crop Farming
+      br
+      input(type="checkbox", id="livestock-farming", name="activities", value="livestock-farming")
+      label(for="livestock-farming") Livestock Farming
+      br
+      input(type="checkbox", id="fish-farming", name="activities", value="fish-farming")
+      label(for="fish-farming") Fish Farming
+      br
+      input(type="checkbox", id="other-activities", name="activities", value="other-activities")
+      label(for="other-activities") Other Activities
+      br
+      br
+
+      label(for="nin") NIN Number:
+      input(type="text", id="nin", name="nin")
+      br
+      br
+
+      label(for="phone-number") Phone Number:
+      input(type="text", id="phone-number", name="phone-number")
+      br
+      br
+
+      label(for="directions") Directions to Home:
+      br
+      textarea(id="directions", name="directions")
+      br
+      br
+
+      label(for="residence-type") Residence Type:
+      select(id="residence-type", name="residence-type")
+        option(value="owned") Owned
+        option(value="rented") Rented
+        option(value="other") Other
+      br
+      br
+
+      label(for="stay-period") Period of Stay in Ward (in years):
+      input(type="number", id="stay-period", name="stay-period")
+      br
+      br
+
+      input(type="submit", value="Register FarmerOne")
+    h2 Update FarmerOne Details
+    form
+      label(for="fo-number") FO Number:
+      input(type="text", id="fo-number", name="fo-number")
+      br
+      br
+
+      label(for="activities") Activities Involved:
+      br
+      input(type="checkbox", id="crop-farming", name="activities", value="crop-farming")
+      label(for="crop-farming") Crop Farming
+      br
+      input(type="checkbox", id="livestock-farming", name="activities", value="livestock-farming")
+      label(for="livestock-farming") Livestock Farming
