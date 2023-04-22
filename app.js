@@ -13,6 +13,8 @@ const bodyParser =require('body-parser')
 
 const AORoutes =require("./routes/AORoutes")
 const landingPgRoutes =require("./routes/landingPgRoutes")
+const registerRoutes =require("./routes/registerRoutes")
+
 
 
 
@@ -39,6 +41,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/",AORoutes)
 app.use("/",landingPgRoutes)
+app.use("/",registerRoutes)
 
 
 
