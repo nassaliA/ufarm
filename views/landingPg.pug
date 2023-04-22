@@ -1,0 +1,132 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title UFARM
+  link(rel='stylesheet' href='styles.css')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous')
+header#header
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container-fluid
+      a.navbar-brand(href='admin.html')  U FARM
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link.active(href='#') Home
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='#about') About
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              | Account
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href='loginC.html') login
+              li OR
+              li
+                a.dropdown-item(href='registerC.html') signup
+              li
+                hr.dropdown-divider
+          li.nav-item
+            a.nav-link.active(href='contactHelp.html') Contact Us
+        div
+          a.btn.btn-outline-success(href='/farmerlogin.html') login
+        a.btn.btn-outline-success(href='/registeF.html') register
+section
+  h1 UFARM
+  h2 WELCOME TO UFARM
+  p Harnessing dynamism in urban farming
+  form.d-flex(role='search')
+    input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+    button.btn.btn-outline-success(type='submit') Search
+
+hr
+main
+  .row.row-cols-1.row-cols-md-4.g-8
+    .col(style='width: 20rem;')
+      .card
+        img.card-img-top(src='/images/carrotwithGreen.jpg' alt='...')
+        .card-body
+          h5.card-title Carrots
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/full cabbage.jpg' alt='...')
+        .card-body
+          h5.card-title Cabbage
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/Untitled design.png' alt='...')
+        .card-body
+          h5.card-title tomatoes
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/cut cabbage.jpg' alt='...')
+        .card-body
+          h5.card-title Card title
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  hr
+  p OUR WORK WITH URBAN FARMERS
+  #carouselExample.carousel.slide
+    .carousel-inner
+      .carousel-item.active
+        img#carouselImg.d-block.w-100(src='/images/africa-2011383_1920.jpg' class='alt=')
+      .carousel-item
+        img.d-block.w-100(src='/images/black farmer.jpg' alt='...')
+      .carousel-item
+        img.d-block.w-100(src='/images/farmer-2258309_1920.jpg' alt='...')
+    button.carousel-control-prev(type='button' data-bs-target='#carouselExample' data-bs-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    button.carousel-control-next(type='button' data-bs-target='#carouselExample' data-bs-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.visually-hidden Next
+  hr
+  .row.row-cols-1.row-cols-md-4.g-8
+    .col(style='width: 20rem;')
+      .card
+        img.card-img-top(src='/images/carrotwithGreen.jpg' alt='...')
+        .card-body
+          h5.card-title Carrots
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/full cabbage.jpg' alt='...')
+        .card-body
+          h5.card-title Cabbage
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/Untitled design.png' alt='...')
+        .card-body
+          h5.card-title tomatoes
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content.
+    .col
+      .card(style='width: 20rem;')
+        img.card-img-top(src='/images/cut cabbage.jpg' alt='...')
+        .card-body
+          h5.card-title Card title
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  hr
+  #about
+    h1 About UFARM
+    p
+      | Massaja Division Urban farm initiative(UFARM) is a program that aims to promote and support urban farming
+      | practice while easing market access and improving on the family earnings and livelihoods.
+    h1 Fast Shipping
+    p
+      | We make sure you recieve your orders as soon as possible. We also provide free returns if you are not satisfied.
+    h1 Quality Assurance
+    p For every purchase you make, we will ensure there are no damages or faults.
