@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const mongoose= require("mongoose")
+const dotenv = require("dotenv").config();
 // we are creating an eviroment file
 // require("dotenv").config();
 
@@ -17,6 +18,11 @@ const registerRoutes =require("./routes/registerRoutes")
 
 
 
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // creating a connection between the controller and the database
 mongoose.connect(config.database,{
@@ -43,17 +49,4 @@ app.use("/",AORoutes)
 app.use("/",landingPgRoutes)
 app.use("/",registerRoutes)
 
-
-
-// support parsing of application/json type post data
-app.use(bodyParser.json());
-
-//support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-
-
-
-
-app.listen(3000, ()=> console.log('listening on port 3000'))
+app.listen(process.env.PORT, ()=> console.log(`Listening on port ${process.env.PORT}`))

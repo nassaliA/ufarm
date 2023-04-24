@@ -1,23 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const connectEnsureLogin = require("connect-ensure-login")
-//const Register =require("../models/registermodel")
+const Farmer =require("../models/registerModel")
 
 
-router.get("/register", (req,res)=>{
-    res.render("register")
+router.get("/register", async(req,res)=>{
+    const farmer= await Farmer.find()
+    res.status(200).json({data:farmer})
+    //res.render("register")
 });
 
 
 router.post("/register", async(req,res)=>{
     try{
-        const register = new Register(req.body)
+        const register = new Farmer(req.body)
         await register.save()
-        res.redirect("/register")
-        console.log(req.body)
+       //res.status(201).json({message:"registered successfully"})
+      // console.log(req.body)
+        res.redirect("/login") 
     }
     catch(err){
         console.log(err)
+        res.status(500).json({err:`${ err.message}`})
     }
 })
 
@@ -42,7 +46,7 @@ router.get("/register",connectEnsureLogin.ensureLoggedIn(), async(req,res)=>{
     }
 });
 
-router.post("/students/delete", async(req,res)=>{
+router.post("/farmer/delete/:id", async(req,res)=>{
     try{
     // deleteone is a inbuilt record
     await Register.deleteOne({_id:req.body.id});
@@ -54,7 +58,7 @@ router.post("/students/delete", async(req,res)=>{
     }
 });
 
-router.get("/edit_student/:id", async(req,res)=>{
+router.put("/edit_student/:id", async(req,res)=>{
     try{
         const item= await Register.findOne({_id:req.params.id});
         res.render("student_edit", {student:item});
