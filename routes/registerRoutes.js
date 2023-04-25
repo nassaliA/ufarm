@@ -6,8 +6,8 @@ const Farmer =require("../models/registerModel")
 
 router.get("/register", async(req,res)=>{
     const farmer= await Farmer.find()
-    res.status(200).json({data:farmer})
-    //res.render("register")
+    //res.status(200).json({data:farmer})
+    res.render("register")
 });
 
 
