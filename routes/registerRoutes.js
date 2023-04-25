@@ -77,7 +77,7 @@ router.post("/edit_student", async(req,res)=>{
         res.redirect("/student")
     }
     catch(err){
-        res.send("failed to update student details")
+        res.send("failed to update farmer details")
         console.log(err)
     }
     
