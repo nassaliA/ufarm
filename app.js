@@ -15,9 +15,10 @@ const bodyParser =require('body-parser')
 const AORoutes =require("./routes/AORoutes")
 const landingPgRoutes =require("./routes/landingPgRoutes")
 const registerRoutes =require("./routes/registerRoutes")
-const addProductsRoutes =require("./routes/addProductsRoutes")
+//const addProductsRoutes =require("./routes/addProductsRoutes")
 const Farmer1dashRoutes =require("./routes/Farmer1dashRoutes")
 const loginRoutes =require("./routes/loginRoutes")
+const customerLRoutes =require("./routes/customerLRoutes")
 
 
 
@@ -51,8 +52,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/",AORoutes)
 app.use("/",landingPgRoutes)
 app.use("/",registerRoutes)
-app.use("/",addProductsRoutes)
+//app.use("/",addProductsRoutes)
 app.use("/",Farmer1dashRoutes)
 app.use("/",loginRoutes)
+app.use("/",customerLRoutes)
 
 app.listen(process.env.PORT, ()=> console.log(`Listening on port ${process.env.PORT}`))
