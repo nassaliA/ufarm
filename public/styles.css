@@ -6,8 +6,8 @@ body {
 width: 100%;
 height: 100vh;
 margin: 0 ;
-background-color: #067044;
-color: #e3f1ec;
+background-color: #e5f2ed;
+color: #0e0e0e;
 font-family: Tahoma;
 font-size: 16px;
 }
@@ -29,7 +29,7 @@ padding-bottom: 2em;
 fieldset {
 border: none;
 padding: 2rem 0;
-border-bottom: 3px solid #c5c5e2;
+border-bottom: 3px solid #f1f1f6;
 }
 
 fieldset:last-of-type {
@@ -50,9 +50,9 @@ min-height: 2em;
 }
 
 input, textarea {
-background-color: #b9d6dd;
-border: 1px solid #e6e6ee;
-color: #ffffff;
+background-color: #fff;
+border: 1px solid #0e0e0e;
+color: #070707;
 }
 
 .inline {
@@ -67,10 +67,10 @@ width: 60%;
 margin: 1em auto;
 height: 2em;
 font-size: 1.1rem;
-background-color: #fffffd;
-border-color: white;
+background-color: #0a0a0a;
+border-color: rgb(8, 8, 8);
 min-width: 300px;
-color:#067044;
+color:#fcfcfc;
 }
 
 input[type="file"] {
@@ -78,15 +78,15 @@ padding: 1px 2px;
 }
 
 a{
-color: #dfdfe2;
+color: #141415;
 }
 .section-img{
 width: 50%;
 
 }
 main{
-background-color: #067044;
-color: #e7cfc6;
+background-color: #f9fcfa;
+color: #0c0c0c;
 
 }
 .card {
@@ -94,7 +94,7 @@ margin: 0 auto;
 height: 100%;
 
 }
-sidebar {
+/*sidebar {
 
 top: 20px;
 left: 20px;
@@ -130,37 +130,85 @@ text-decoration: none;
 .main-content {
 margin-left: 200px;
 padding: 20px;
-}
+}*/
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 
 body {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif;
+overflow-x: hidden;
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
 }
 
-.header {
-background-color: #007bff;
-color: #fff;
-padding: 10px;
+/* Toggle Styles */
+
+#viewport {
+padding-left: 250px;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
 }
 
-.section {
-margin: 20px;
-padding: 20px;
-border: 1px solid #ddd;
-}
-
-h2 {
-margin-top: 0;
-}
-
-table {
-border-collapse: collapse;
+#content {
 width: 100%;
+position: relative;
+margin-right: 0;
 }
 
-th, td {
-border: 1px solid #ddd;
-padding: 10px
+/* Sidebar Styles */
+
+#sidebar {
+z-index: 1000;
+position: fixed;
+left: 250px;
+width: 250px;
+height: 100%;
+margin-left: -250px;
+overflow-y: auto;
+background: #37474F;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
 }
+
+#sidebar header {
+background-color: #263238;
+font-size: 20px;
+line-height: 52px;
+text-align: center;
+}
+
+#sidebar header a {
+color: #fff;
+display: block;
+text-decoration: none;
+}
+
+#sidebar header a:hover {
+color: #fff;
+}
+
+
+#sidebar .nav a{
+background: none;
+border-bottom: 1px solid #455A64;
+color: #CFD8DC;
+font-size: 14px;
+padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+background: none;
+color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+margin-right: 16px;
+}
+
+
 
