@@ -25,7 +25,7 @@ head
           br
            | Number of Urban Farmers in ward #{farmerWard}: #{activeFarmers}
           br
-        table.table
+      table.table
             thead.thead-dark
                 tr
                     th(scope='col') Name
@@ -51,13 +51,12 @@ head
                         td #{urbanFarmer.phonenumber}
                         td #{urbanFarmer.address}
                         td #{urbanFarmer.ward}
-                        td 
-                        //-     form(method='post', action='/students/delete')
-                        //-         input(type='hidden', name="id", value=student._id)
-                        //-         button.btn.btn-danger(type='submit') Delete
+              form(method='post', action='/')
+                input(type='hidden', name="id", value=farmer._id)
+                  button.btn.btn-danger(type='submit') Delete
 
-                        //- td        
-                        //-     a.btn.btn-dark.btn-block(href='/edit_student/'+student._id) Edit
+                        td        
+                           a.btn.btn-dark.btn-block(href='/editFarmerDetails/'+student._id) Edit
             else 
                 p 
                   h4 There are no Urban Farmers registered yet

@@ -19,6 +19,7 @@ const registerRoutes =require("./routes/registerRoutes")
 const Farmer1dashRoutes =require("./routes/Farmer1dashRoutes")
 const loginRoutes =require("./routes/loginRoutes")
 const customerLRoutes =require("./routes/customerLRoutes")
+const editFarmerRoutes =require("./routes/editFarmerRoutes")
 
 
 
@@ -56,5 +57,6 @@ app.use("/",registerRoutes)
 app.use("/",Farmer1dashRoutes)
 app.use("/",loginRoutes)
 app.use("/",customerLRoutes)
+app.use("/",editFarmerRoutes)
 
 app.listen(process.env.PORT, ()=> console.log(`Listening on port ${process.env.PORT}`))
