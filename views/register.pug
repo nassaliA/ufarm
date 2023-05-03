@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Urban Farmer Registration
+  title  Registration
   link(rel='stylesheet' href='/styles.css')
 button.btn.btn-outline-success(type='button' style='background-color: rgb(34, 206, 25);')
   a(href='/') Back Home
@@ -13,17 +13,17 @@ form#myForm(onsubmit='return validate();')
   fieldset
     label(for='firstName')
       | Enter Your First Name:
-      input#firstName(name='first-name' type='text')
+      input#firstName(name='firstNname' type='text')
     p#fnameError
-    label(for='last-name')
+    label(for='lastname')
       | Enter Your Last Name: 
-      input#last-name(name='last-name' type='text')
+      input#last-name(name='lastName' type='text')
     label(for='email')
       | Enter Your Email: 
       input#email(name='email' type='email')
     label(for='new-password')
       | Create a New Password: 
-      input#new-password(name='new-password' type='password')
+      input#new-password(name='password' type='password')
   fieldset
     label(for='female')
       input#female.inline(type='radio' name='gender' checked='')
@@ -32,22 +32,13 @@ form#myForm(onsubmit='return validate();')
       input#male.inline(type='radio' name='gender')
       |  Male
   fieldset
-    label(for='profile-picture')
+    label(for='pp')
       | Upload a profile picture: 
       input#profile-picture(type='file' name='file')
     label(for='age')
       | Input your age (years): 
       input#age(type='number' name='age' min='13' max='120')
-    label(for='referrer')
-      | ward name?
-      select#ward(name='ward')
-        option(value='selected') (select one)
-        option(value='1') ward 1 
-        option(value='2') ward 2
-        option(value='3') ward 3
-        option(value='4') ward 4
-        fieldset 
-        .form-group
+      .form-group
         label.col-md-4.control-label Role
         .col-md-4.inputGroupContainer
           .input-group
@@ -58,6 +49,17 @@ form#myForm(onsubmit='return validate();')
                 option(value='ao') Agricultural Officer
                 option(value='fo') Farmer One
                 option(value='uf') Urban Farmer
+                option(value='co') Customer
+    label(for='referrer')
+      | ward name?
+      select#ward(name='ward')
+        option(value='selected') (select one)
+        option(value='1') ward 1 
+        option(value='2') ward 2
+        option(value='3') ward 3
+        option(value='4') ward 4
+        fieldset 
+        
     label(for='bio')
       | Provide a bio:
       textarea#bio(name='bio' rows='3' cols='30' placeholder='tell us more about yourself...')

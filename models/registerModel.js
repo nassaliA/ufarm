@@ -1,33 +1,11 @@
 const mongoose = require("mongoose");
 
 const registerSchema = new mongoose.Schema({
-    firstname:{
+    firstName:{
         type:String,
         trim:true
     },
-    lastname:{
-        type:String,
-        trim:true
-    },
-    phone:{
-        type:String,
-        trim:true
-    },
-    address:{
-        type:String,
-        trim:true
-    },
-    
-
-    city:{
-        type:String,
-        trim:true
-    },
-    age:{
-        type:Number,
-        trim:true
-    },
-    gender:{
+    lastName:{
         type:String,
         trim:true
     },
@@ -35,11 +13,34 @@ const registerSchema = new mongoose.Schema({
         type:String,
         trim:true
     },
-    ward:{
+    password:{
+        type:String,
+        trim:true
+    },
+    
+
+    gender:{
+        type:String,
+        trim:true
+    },
+    pp:{
+        type:String,
+        trim:true
+    },
+    
+    age:{
+        type:String,
+        trim:true
+    },
+    role:{
         type:Number,
         trim:true
     },
-    NIN:{
+    ward:{
+        type:String,
+        trim:true
+    },
+    bio:{
         type:String,
         trim:true
     },

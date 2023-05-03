@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-/onst Product = require("../models/urbanFarmer/addProductModel");
-const requireAuth = require("../middleware/auth");
+//const Product = require("../models/addProductModel");
+//const requireAuth = require("../middleware/auth");
 router.use(express.static(path.join(__dirname, "public")));
 
 // Defining Multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../public/assets/uploads"));
+    cb(null, path.join(__dirname, "uploads/"));
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
@@ -19,11 +19,11 @@ const storage = multer.diskStorage({
 // Create Multer upload instance
 const upload = multer({ storage: storage });
 
-router.get("/", requireAuth, (req, res) => {
-  res.render("addProducts");
-});
+// router.get("/", requireAuth, (req, res) => {
+//   res.render("addProducts");
+// });
 
-router.post("/", requireAuth, upload.single("image"), async (req, res) => {
+router.post("/", upload.single("image"), async (req, res) => {
   const filename = req.file.filename;
   const product_fields = req.body;
   product_fields.image = filename;

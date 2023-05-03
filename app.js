@@ -4,11 +4,7 @@ const path = require('path');
 const router = express.Router();
 const mongoose= require("mongoose")
 const dotenv = require("dotenv").config();
-// we are creating an eviroment file
-// require("dotenv").config();
 
-
-// importing database file directly
 const config = require("./config/database")
 const bodyParser =require('body-parser')
 

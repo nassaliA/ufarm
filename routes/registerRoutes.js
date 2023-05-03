@@ -58,20 +58,20 @@ router.post("/farmer/delete/:id", async(req,res)=>{
     }
 });
 
-router.put("/edit_student/:id", async(req,res)=>{
+router.put("/editFarmerDetails/:id", async(req,res)=>{
     try{
         const item= await Register.findOne({_id:req.params.id});
-        res.render("student_edit", {student:item});
+        res.render("editFarmerDetails", {student:item});
     }
     catch(err){
-        res.send("could not find student");
+        res.send("could not find farmer");
         console.log(err)
     }
 });
 
 
 
-router.post("/edit_student", async(req,res)=>{
+router.post("/editFarmerDetails", async(req,res)=>{
     try{
         await Register.findOneAndUpdate({_id:req.query.id},req.body)
         res.redirect("/student")
