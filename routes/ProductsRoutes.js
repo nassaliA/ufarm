@@ -1,10 +1,17 @@
 const express = require("express");
 const router = express.Router();
+//const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
-//const Product = require("../models/addProductModel");
-//const requireAuth = require("../middleware/auth");
-router.use(express.static(path.join(__dirname, "public")));
+const Product = require("../models/addProductsModel");
+
+router.get("/", (req, res) => {
+  res.render("addProducts");
+});
+
+//router.use(express.static(path.join(__dirname, "public")));
+//router.use(bodyParser.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
+//router.use(bodyParser.json()); // parse application/json
 
 // Defining Multer storage configuration
 const storage = multer.diskStorage({
@@ -18,10 +25,6 @@ const storage = multer.diskStorage({
 
 // Create Multer upload instance
 const upload = multer({ storage: storage });
-
-// router.get("/", requireAuth, (req, res) => {
-//   res.render("addProducts");
-// });
 
 router.post("/", upload.single("image"), async (req, res) => {
   const filename = req.file.filename;

@@ -7,7 +7,7 @@ head
   link(rel='stylesheet' href='/assets/bootstrap/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css')
   link(rel="shortcut icon", href="/assets/vectors/ufarm-logo.png", type="image/x-icon")
-  link(rel="stylesheet" href="/css/dashboard.css")  
+  link(rel="stylesheet" href="/styles.css")  
 body(onload="generateProductId()")
 header
 - let page = "add-product"
@@ -23,7 +23,7 @@ main(style='margin-top: 58px')
           h5.card-title Add new product
         .card-body
           #spinner
-          form#regForm(onsubmit='return validateProduct()' method="post" action="/add-product" enctype="multipart/form-data")
+          form#regForm(onsubmit='return validateProduct()' method="post" action="/addProducts" enctype="multipart/form-data")
             .row
               .col-md-4.pr-1
                 .form-group

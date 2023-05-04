@@ -1,50 +1,50 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const registerSchema = new mongoose.Schema({
-    firstName:{
-        type:String,
-        trim:true
-    },
-    lastName:{
-        type:String,
-        trim:true
-    },
-    email:{
-        type:String,
-        trim:true
-    },
-    password:{
-        type:String,
-        trim:true
-    },
+const registrationSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  gender: {
+    type: String,
+    required: true,
     
+  },
+  pp: {
+    type: String,
+    trim: true
+  },
+  age: {
+    type: Number,
+    required: true
+  },
+  role: {
+    type: String,
+    required: true,
+  },
+  ward: {
+    type: String,
+    required: true,
+    enum: ['1', '2', '3', '4']
+  },
+  bio: {
+    type: String,
+    required: true
+  }
+});
 
-    gender:{
-        type:String,
-        trim:true
-    },
-    pp:{
-        type:String,
-        trim:true
-    },
-    
-    age:{
-        type:String,
-        trim:true
-    },
-    role:{
-        type:Number,
-        trim:true
-    },
-    ward:{
-        type:String,
-        trim:true
-    },
-    bio:{
-        type:String,
-        trim:true
-    },
-
-})
-
-module.exports = mongoose.model("Farmers", registerSchema)
+module.exports = mongoose.model('Registration', registrationSchema);

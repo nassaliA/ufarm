@@ -6,7 +6,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Edit Farmer
 .container
-  form#contact_form.well.form-horizontal(name='editStudent' action='/edit_student?id='+student._id method='post')
+  form#contact_form.well.form-horizontal(name='editFarmer' action='/editFarmerDetails?id='+farmer._id method='post')
     fieldset
       // Form Name
       legend
@@ -21,7 +21,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='fullname' type='text' value= student.fullname )
+            input.form-control(name='fullname' type='text' value= farmer.fullname )
       // Text input
       .form-group
         label.col-md-4.control-label Phone number
@@ -29,7 +29,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='phone' type='text' value= student.phone)
+            input.form-control(name='phone' type='text' value= farmer.phone)
      
       // Text input
       .form-group
@@ -38,7 +38,7 @@ head
           .input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
-            input.form-control(name='address' type='text' value= student.address)
+            input.form-control(name='address' type='text' value= farmer.address)
       // Text input
       .form-group
         label.col-md-4.control-label Language

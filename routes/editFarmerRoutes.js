@@ -1,6 +1,10 @@
 const  express = require("express");
 const router =express.Router();
 
+router.get("/editFarmerDetails", (req, res) => {
+    res.render("editFarmerDetails");
+  });
+  
 router.post("/farmer/delete", async(req,res)=>{
     try{
     // deleteone is a inbuilt record
@@ -39,11 +43,4 @@ router.post("/editFarmerDetails", async(req,res)=>{
 });
 
 // this should always be the last line in your routes file
-module.exports = router
-
-
-
-
-
-
 module.exports = router

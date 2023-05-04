@@ -9,11 +9,11 @@ button.btn.btn-outline-success(type='button' style='background-color: rgb(34, 20
   a(href='/') Back Home
 h1 Registration Form
 p Please fill out this form with the required information
-form#myForm(onsubmit='return validate();')
+form#myForm(onsubmit='return validate();' action='/register' method='POST')
   fieldset
     label(for='firstName')
       | Enter Your First Name:
-      input#firstName(name='firstNname' type='text')
+      input#firstName(name='firstName' type='text')
     p#fnameError
     label(for='lastname')
       | Enter Your Last Name: 
@@ -73,7 +73,7 @@ form#myForm(onsubmit='return validate();')
           br
           button.btn.btn-warning(type='submit') SUBMIT
            
-script(src="/js/ufarm.js") 
+script(src='/js/ufarm/') 
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')

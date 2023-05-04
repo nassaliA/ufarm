@@ -31,14 +31,8 @@ router.get("/register",connectEnsureLogin.ensureLoggedIn(), async(req,res)=>{
     try{
         let items = await Register.find();
         // console.log(items)
-        let fees= await Register.aggregate([
-            {
-                //"$group": {category: "$parents",
-               "$group": {_id: "$all",
-                totalFees: {$sum: "$fees"}   }
-            }
-        ])
-        res.render("farmer",{farmers:items, total:fees[0]})
+        
+        //res.render("farmer",{farmers:items, total:fees[0]})
     }
     catch(err){
         console.log(err)
@@ -74,7 +68,7 @@ router.put("/editFarmerDetails/:id", async(req,res)=>{
 router.post("/editFarmerDetails", async(req,res)=>{
     try{
         await Register.findOneAndUpdate({_id:req.query.id},req.body)
-        res.redirect("/student")
+        res.redirect("/")
     }
     catch(err){
         res.send("failed to update farmer details")

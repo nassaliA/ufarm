@@ -1,25 +1,21 @@
-const  express = require("express");
-const { Admin } = require("mongodb");
-const router =express.Router();
+const express = require("express");
+const router = express.Router();
 
-router.get('/AO', (req, res) => {
-    res.render('AO', {title: "AO"});
+//const { Admin } = require("../models/admin");
+
+router.get("/AOdash", (req, res) => {
+  res.render("AOdash");
 });
-router.get("/AO",(req,res)=>{
-res.render("AO")})
 
-router.post("/AO", async(req,res)=>{
-    try{
-        const admin = new Admin(req.body);
-        await admin.save()
-        res.redirect("/AO")
-        console.log(req.body)
-    }
-    catch(err){
-        console.log(err)
-    }
-})
+router.post("/AOdash", async (req, res) => {
+  try {
+    const admin = new Admin(req.body);
+    await admin.save();
+    res.redirect("/Aodash");
+    console.log(req.body);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-
-// this should always be the last line in your routes file
-module.exports = router
+module.exports = router;

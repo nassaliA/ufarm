@@ -1,114 +1,63 @@
-const validate=()=>{
-    let input;
-    let error;
-    let firstName=document.forms["reg_form"]["firstName"].value;
-  
-    if(!firstName){
-     error=document.getElementById("fnameError");
-     error.innerHTML="first name required";
-  
-     input=document.getElementById("firstName");
-     error.style.color="red";
-     input.focus()
-     
-      //firstName.focus();
-      return false
-    }
-  
+function validate() {
+  // Get form fields by their IDs
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('last-name');
+  const email = document.getElementById('email');
+  const password = document.getElementById('new-password');
+  const gender = document.querySelector('input[name="gender"]:checked');
+  const profilePicture = document.getElementById('profile-picture');
+  const age = document.getElementById('age');
+  const role = document.getElementById('role');
+  const ward = document.getElementById('ward');
+  const bio = document.getElementById('bio');
+  const termsAndConditions = document.getElementById('terms-and-conditions');
+
+  // Validate each field
+  let isValid = true;
+  if (firstName.value.trim() === '') {
+    document.getElementById('fnameError').innerHTML = 'Please enter your first name';
+    isValid = false;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // let validate=()=>{
-  // const firstName=document.getElementById("first-name").value;
-  // const lastName=document.getElementById("last-name").value;
-  // //const  =document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  // //const firstName=document.getElementById("first-name").value;
-  
-  // const errorfirstName=document.getElementById("firstNameerror").textContent;
-  // //this is the validation statement
-  // //validation for firstName
-  // if(firstName==""){
-  //     errorfirstName="please put in your first name";
-  //     errorfirstName.style
-  // }
-  
-  // // Get the form element
-  // const form = document.getElementById("myForm");
-  
-  // // Add an event listener to the form submit event
-  // form.addEventListener("submit", function(event) {
-  //   // Prevent the default form submission
-  //   event.preventDefault();
-  
-  //   // Get the form input values
-  //   const name = document.getElementById("name").value;
-  //   const email = document.getElementById("email").value;
-  //   const password = document.getElementById("password").value;
-  
-  //   // Check if the name is empty
-  //   if (name === "") {
-  //     alert("Name is required");
-  //     return false;
-  //   }
-  
-  //   // Check if the email is valid
-  //   const emailRegex = /\S+@\S+\.\S+/;
-  //   if (!emailRegex.test(email)) {
-  //     alert("Email is invalid");
-  //     return false;
-  //   }
-  
-  //   // Check if the password is at least 8 characters long
-  //   if (password.length < 8) {
-  //     alert("Password must be at least 8 characters long");
-  //     return false;
-  //   }
-  
-  //   // If all validation checks pass, submit the form
-  //   form.submit();
-  // });
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // }
+  if (lastName.value.trim() === '') {
+    document.getElementById('lnameError').innerHTML = 'Please enter your last name';
+    isValid = false;
+  }
+  if (email.value.trim() === '') {
+    document.getElementById('emailError').innerHTML = 'Please enter your email';
+    isValid = false;
+  }
+  if (password.value.trim() === '') {
+    document.getElementById('passwordError').innerHTML = 'Please enter a password';
+    isValid = false;
+  }
+  if (!gender) {
+    document.getElementById('genderError').innerHTML = 'Please select a gender';
+    isValid = false;
+  }
+  if (!profilePicture.value) {
+    document.getElementById('profilePictureError').innerHTML = 'Please upload a profile picture';
+    isValid = false;
+  }
+  if (age.value < 13 || age.value > 120) {
+    document.getElementById('ageError').innerHTML = 'Please enter a valid age (between 13 and 120)';
+    isValid = false;
+  }
+  if (role.value === 'Default') {
+    document.getElementById('roleError').innerHTML = 'Please select a role';
+    isValid = false;
+  }
+  if (ward.value === 'selected') {
+    document.getElementById('wardError').innerHTML = 'Please select a ward';
+    isValid = false;
+  }
+  if (bio.value.trim() === '') {
+    document.getElementById('bioError').innerHTML = 'Please provide a bio';
+    isValid = false;
+  }
+  if (!termsAndConditions.checked) {
+    document.getElementById('termsAndConditionsError').innerHTML = 'Please accept the terms and conditions';
+    isValid = false;
+  }
+
+  return isValid;
+}
