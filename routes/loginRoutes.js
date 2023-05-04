@@ -25,7 +25,7 @@ router.post("/login", passport.authenticate("local", {failureRedirect: "/login"}
         res.redirect("/")
       }
       else if (req.user.role == "fo" && userExist) {
-        res.redirect("/farmer1dash")
+        res.redirect("/Farmer1dash")
       }
       else if (req.user.role == "co" && userExist) {
         res.redirect("/customerL")
